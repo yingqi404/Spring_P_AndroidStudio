@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- 顶部：星期几 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text=""
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="一" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="二" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="三" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="四" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="五" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="六" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="日" />
+        </LinearLayout>
+
+        <!-- 网格课程表 -->
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:columnCount="8"
+            app:rowCount="6">
+
+            <!-- 每节课用一行：时间列 + 周一到周日的课程 -->
+            <!-- 第1节 -->
+            <TextView
+                style="@style/CourseTimeStyle"
+                android:text="1" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Linux" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Android" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="ビジネス" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="iOS" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Database" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Android" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="UML" />
+
+            <!-- 第2节 -->
+            <TextView
+                style="@style/CourseTimeStyle"
+                android:text="2" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="IOS" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="IOS" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Android" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Java" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="IoT" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="PHP" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="コンテンツ" />
+
+            <!-- 第3节 -->
+            <TextView
+                style="@style/CourseTimeStyle"
+                android:text="3" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Database" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="UI/UX" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="日本語" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="iOS" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Android" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="資格対策" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="HR" />
+
+            <!-- 第4节 -->
+            <TextView
+                style="@style/CourseTimeStyle"
+                android:text="4" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="iOS" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Java" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Android" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Java" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="情報概論" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="日本語" />
+
+            <!-- 第4节课程（结束） -->
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Linux" />
+
+            <!-- 分隔空隙：与第五节课之间有距离 -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                app:layout_columnSpan="8" />
+
+            <!-- 第5节 -->
+            <TextView
+                style="@style/CourseTimeStyle"
+                android:text="5" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="就職" />
+            <!-- ... 其他课程 -->
+
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="SwiftUI" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="kotlin" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Android" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="iOS" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="IOS" />
+
+            <TextView
+                style="@style/CourseCellStyle"
+                android:text="Linux" />
+
+        </androidx.gridlayout.widget.GridLayout>
+    </LinearLayout>
+</ScrollView>
