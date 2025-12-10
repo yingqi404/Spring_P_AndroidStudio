@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 String email_string = input_email.getText().toString();   //input_email:View -> String
 
 
-                //判断三框都不能为空
+                //判断三个输入框都不能为空
                 if(!userName_string.isEmpty() && !password_string.isEmpty() && !email_string.isEmpty()){
                     //子线程发送网络请求 --> copy
                     //APP发送网络请求时间不定，容易崩溃，所以创建子线程.start();
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                                         "}";
                                 OkHttpClient client = new OkHttpClient();   //创建okhttp客户端
                                 Request request =new Request.Builder()
-                                        .url("http://10.220.16.0:8080/user/user")//服务器IP地址：(现在本级作为后台服务器)本机IP：192.168.1.2
+                                        .url("http://10.220.6.35:8088/user/user")//服务器IP地址：(现在本级作为后台服务器)本机IP：192.168.1.2
                                         .post(RequestBody.create(MediaType.parse("application/json"),json))
                                         .build();//创建http请求
                                 Response response = client.newCall(request).execute(); //向后端发送求情会返回信息，这里接受后端的回复,execute:执行发送的指令
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                                     @Override
                                     public void run() {
                                         Toast.makeText(MainActivity.this,"Sent successfully！",Toast.LENGTH_SHORT).show();
+
                                     }
                                 });
                             }catch (Exception e){
@@ -97,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
 
                     //--------------子线程网络通信成功结束，跳转下一界面------------------
 
-                } else if (userName_string.isEmpty()) { // 并且 密码 >= 6 位 //* 输入错误类型提示 *
+                }
+                else if (userName_string.isEmpty()) { // 并且 密码 >= 6 位 //* 输入错误类型提示 *
                     Toast.makeText(MainActivity.this,"Please enter your username！",Toast.LENGTH_SHORT).show();
                 } else if (password_string.isEmpty() || password_string.length()<6 || password_string.length()>12) {
                     Toast.makeText(MainActivity.this,"Please enter a password between 6 and 12 characters！",Toast.LENGTH_SHORT).show();
